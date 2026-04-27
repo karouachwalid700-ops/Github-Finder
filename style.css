@@ -72,3 +72,36 @@ body{
 .search button:hover{
     background-color: green;
 }
+
+.find-username{
+    text-align: center;
+    color: grey;
+    padding-top: 90px;
+    line-height: 2;
+}
+
+.loading p{
+   text-align: center;
+   padding-top: 100px;
+   color: grey;
+}
+
+.inline-block{  
+    width: 3rem;       
+    height: 3rem;       
+    position: absolute;
+    left: 48%;
+    margin-top: 3%;
+    border-radius: 50%;
+    border-bottom: 2px solid green; 
+    animation: spin 1s linear infinite; 
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

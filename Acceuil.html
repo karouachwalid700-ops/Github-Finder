@@ -11,7 +11,7 @@
 <body>
     <header class="navbar">
           <img src="images/logo navbar.png" alt="logo Github">
-            <li><a href="#">Bookmarks <span id="count">0</span></a></li>
+            <li><a href="#">Favoris <span id="count">0</span></a></li>
     </header>
 
     <section class="title">
@@ -23,5 +23,19 @@
         <input type="text" placeholder="Search Github Username...">
         <button type="submit">Search</button>
     </section>
+
+    <div id="welcomeState" class="find-username">
+       <i class="fa-solid fa-magnifying-glass search-icon"></i>
+       <h2>Find GitHub Users</h2>
+       <p>Search for any GitHub username to get started</p>
+    </div>
+
+    
+    <div id="loadingState" class="loading">
+        <div class="inline-block">
+        </div>
+        <p>loading...</p>
+    </div>
+    
 </body>
 </html>

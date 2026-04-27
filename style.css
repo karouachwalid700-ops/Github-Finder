@@ -7,6 +7,9 @@
 
 body{
     background: url(images/github.jpg) no-repeat fixed center center/cover;
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(3px);
 }
 
 .navbar{
@@ -38,3 +41,34 @@ body{
     border-radius: 5px;
 }
 
+.title{
+    text-align: center;
+    padding-top: 50px;
+    color: white;
+}
+
+.search{
+    text-align: center;
+    padding-top: 8%;
+    
+}
+
+.search input{
+    padding: 15px 350px 15px 15px;
+    border-radius: 10px;    
+    outline: none;
+    border: none;
+}
+
+.search button{
+    padding: 15px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search button:hover{
+    background-color: green;
+}

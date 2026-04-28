@@ -1,41 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/logo github.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>Github Finder</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitFinder</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="navbar">
-          <img src="images/logo navbar.png" alt="logo Github">
-            <li><a href="#">Favoris <span id="count">0</span></a></li>
-    </header>
 
-    <section class="title">
-         <h1>WELCOME TO GITHUB FINDER <i class="fa-solid fa-magnifying-glass search-icon"></i></h1>
-    </section>
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="logo">Git<span>Finder</span></div>
 
+    <div class="fav-btn">
+      Favoris <span class="fav-count" id="favoris-count">0</span>
+    </div>
+  </header>
 
-    <section class="search">
-        <input type="text" placeholder="Search Github Username...">
-        <button type="submit">Search</button>
-    </section>
+  <hr class="divider">
 
-    <div id="welcomeState" class="find-username">
-       <i class="fa-solid fa-magnifying-glass search-icon"></i>
-       <h2>Find GitHub Users</h2>
-       <p>Search for any GitHub username to get started</p>
+  <!-- ================= SEARCH SECTION ================= -->
+  <section class="search-section" id="search-input">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Nom d'utilisateur GitHub...">
+      <button id="searchBtn">Rechercher</button>
     </div>
 
-    
-    <div id="loadingState" class="loading">
-        <div class="inline-block">
-        </div>
-        <p>loading...</p>
+    <!-- Error message -->
+    <div class="error" id="errorState">
+      Utilisateur non trouvé
     </div>
-    
+  </section>
+
+<!-- ================= LOADING SECTION ================= -->
+<section class="loading-section" id="loadingState">
+
+  <div class="loader-container">
+    <div class="loader-title">Chargement des données</div>
+
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+</section>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero" id="welcomeState">
+    <p>🔍</p>
+    <h1>Explorez les profils GitHub</h1>
+    <p>
+      Entrez un nom d'utilisateur pour afficher ses statistiques publiques.
+    </p>
+  </section>
+
+  <!-- profile section -->
+
+<section class="profile-section">
+
+  <!-- titles -->
+  <div class="titles">
+    <h2>Profil</h2>
+    <h2 class="repo">Repositories</h2>
+  </div>
+
+  <!-- cards -->
+  <div class="profile-container">
+    <div id="userProfile"></div>
+    <div id="reposList" class="repos"></div>
+  </div>
+
+</section>
+
+  <!-- ================= FAVORITES SECTION ================= -->
+<section class="favorites-section" id="favoris-List">
+
+  <h2>Favoris</h2>
+
+  <div class="favorites-container">
+
+    <div class="favorite-card">
+      <img src="profile.jpg" alt="">
+      <div class="fav-info">
+        <h4>Brixo_dev_75</h4>
+        <p>@akarouachwalid700-ops</p>
+      </div>
+      <button class="remove-btn">Supprimer</button>
+    </div>
+
+    <div class="favorite-card">
+      <img src="profile.jpg" alt="">
+      <div class="fav-info">
+        <h4>AnotherUser</h4>
+        <p>@another-dev</p>
+      </div>
+      <button class="remove-btn">Supprimer</button>
+    </div>
+
+  </div>
+
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>

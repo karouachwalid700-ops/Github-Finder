@@ -1,107 +1,378 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-body{
-    background: url(images/github.jpg) no-repeat fixed center center/cover;
-    position: fixed;
-    inset: 0;
-    backdrop-filter: blur(3px);
+body {
+  background: #050B14;
+  color: white;
+  padding: 40px 120px;
 }
 
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    position: sticky;
-    align-items: center;
-    background-color: black;
+section {
+  margin-bottom: 80px;
 }
 
-.navbar img{
-    width: 200px;
-    cursor: pointer;
+.divider {
+  border: 1px solid #1E293B;
+  margin-bottom: 40px;
 }
 
-.navbar li a{
-    text-decoration: none;
-    color: white;
-    background-color: green;
-    padding: 5px;
-    border-radius: 5px;
-    margin-right: 27px;
-    cursor: pointer;
+/* ================= HEADER ================= */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
-.navbar li span{
-    background-color: black;
-    padding: 2px 5px;
-    border-radius: 5px;
+.logo {
+  font-size: 32px;
+  font-weight: 700;
 }
 
-.title{
-    text-align: center;
-    padding-top: 50px;
-    color: white;
+.logo span {
+  color: #12D18E;
 }
 
-.search{
-    text-align: center;
-    padding-top: 8%;
-    
+.fav-btn {
+  background: #0E1622;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1px solid #1E293B;
+  color: #ccc;
 }
 
-.search input{
-    padding: 15px 350px 15px 15px;
-    border-radius: 10px;    
-    outline: none;
-    border: none;
+.fav-count {
+  background: #12D18E;
+  color: black;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-left: 10px;
+  font-weight: 600;
 }
 
-.search button{
-    padding: 15px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+/* ================= SEARCH ================= */
+
+.search-box {
+  display: flex;
+  gap: 20px;
 }
 
-.search button:hover{
-    background-color: green;
+.search-box input {
+  flex: 1;
+  padding: 18px;
+  background: #0E1622;
+  border: 1px solid #1E293B;
+  border-radius: 15px;
+  color: white;
+  font-size: 16px;
 }
 
-.find-username{
-    text-align: center;
-    color: grey;
-    padding-top: 90px;
-    line-height: 2;
+.search-box button {
+  padding: 18px 35px;
+  background: #12D18E;
+  border: none;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.loading p{
-   text-align: center;
-   padding-top: 100px;
-   color: grey;
+.search-box button:hover {
+  opacity: 0.8;
 }
 
-.inline-block{  
-    width: 3rem;       
-    height: 3rem;       
-    position: absolute;
-    left: 48%;
-    margin-top: 3%;
-    border-radius: 50%;
-    border-bottom: 2px solid green; 
-    animation: spin 1s linear infinite; 
+/* ================= ERROR ================= */
+
+.error {
+  background: #2A0E17;
+  color: #ff4d6d;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #5a1a2b;
+  margin-top: 20px;
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* ================= HERO ================= */
+
+.hero {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #8b9bb4;
+  font-size: 40px;
+}
+
+/* ================= PROFILE ================= */
+
+/* titles فوق */
+.titles {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.titles h2 {
+  width: 48%;
+  font-size: 24px;
+}
+
+.repo{
+  margin-right: 20%;
+}
+
+.repo-card span{
+    padding-right: 5px;
+}
+
+/* cards جنب بعضياتهم */
+.profile-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* profile */
+#userProfile {
+  width: 35%;
+}
+
+/* repos */
+#reposList {
+  width: 65%;
+}
+
+.profile-container {
+  display: flex;
+  gap: 40px;
+}
+
+.profile-card {
+  background: #0E1622;
+  padding: 40px;
+  border-radius: 20px;
+  width: 350px;
+  border: 1px solid #1E293B;
+}
+
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.profile-card h2 {
+  margin-bottom: 5px;
+}
+
+.username {
+  color: #12D18E;
+  margin-bottom: 10px;
+}
+
+.bio {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background: #111c2b;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 30%;
+}
+
+.stat-box p {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.add-btn {
+  background: #12D18E;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  opacity: 0.8;
+}
+
+/* ================= REPOS ================= */
+
+.repos {
+  flex: 1;
+}
+
+.repos h3 {
+  margin-bottom: 20px;
+}
+
+.repo-card {
+  background: #0E1622;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #1E293B;
+  margin-bottom: 20px;
+}
+
+.repo-card h4 {
+  color: #12D18E;
+  margin-bottom: 10px;
+}
+
+.repo-info {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.language {
+  background: #0f172a;
+  padding: 3px 10px;
+  border-radius: 20px;
+  color: #38bdf8;
+}
+
+/* ================= FAVORITES ================= */
+
+.favorites-section {
+  margin-top: 60px;
+}
+
+.favorites-section h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.favorites-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.favorite-card {
+  background: #0E1622;
+  border: 1px solid #1E293B;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.favorite-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.fav-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.fav-info h4 {
+  margin-bottom: 5px;
+}
+
+.fav-info p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.remove-btn {
+  background: #2A0E17;
+  color: #ff4d6d;
+  border: 1px solid #5a1a2b;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  opacity: 0.8;
+}
+
+/* ================= NEW LOADING DESIGN ================= */
+
+.loading-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.loader-container {
+  background: rgba(14, 22, 34, 0.8);
+  border: 1px solid #1E293B;
+  backdrop-filter: blur(10px);
+  padding: 40px 60px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(18, 209, 142, 0.05);
+}
+
+.loader-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #12D18E;
+}
+
+/* Animated dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dots span {
+  width: 12px;
+  height: 12px;
+  background: #12D18E;
+  border-radius: 50%;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

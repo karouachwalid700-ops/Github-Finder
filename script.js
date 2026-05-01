@@ -207,3 +207,30 @@ function displayFavorites() {
 
   favorisCount.textContent = state.bookmarks.length;
 }
+
+// MAIN SEARCH
+async function handleSearch() {
+  const username = searchInput.value.trim();
+
+  if (!username) {
+    showError("Please enter a username");
+    return;
+  }
+
+  showLoading();
+
+  const user = await fetchUser(username);
+  if (!user) return;
+
+  const repos = await fetchUserRepos(username);
+
+  state.currentUser = user;
+  state.repos = repos || [];
+
+  displayUser(user);
+
+  if (repos) displayRepos(repos);
+
+  loadingState.style.display = "none";
+  errorState.style.display = "none";
+}

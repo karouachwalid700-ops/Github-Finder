@@ -153,3 +153,57 @@ function removeFromFavorites(username) {
   saveFavorites();
   displayFavorites();
 }
+
+// ============
+function displayFavorites() {
+  favorisListt.innerHTML = "";
+
+  state.bookmarks.forEach(user => {
+    const div = document.createElement("div");
+    div.classList.add("profile-card");
+
+    div.innerHTML = `
+      <img src="${user.avatar_url}">
+      <h2>${user.name || "No name"}</h2>
+      <p class="username">@${user.login}</p>
+      <p>${user.bio || "No bio"}</p>
+
+      <div class="stats">
+        <span>Repos ${user.public_repos}</span>
+        <span>Followers ${user.followers}</span>
+        <span>Following ${user.following}</span>
+      </div>
+
+      <button class="view-btn">View</button>
+      <button class="remove-btn">Delete</button>
+    `;
+
+    // VIEW
+    div.querySelector(".view-btn").addEventListener("click", async () => {
+      showLoading();
+
+        favoritesSection.style.display = "none";
+        profileContainer.style.display = "flex";
+        heroSection.style.display = "none";
+        
+      const repos = await fetchUserRepos(user.login);
+
+      state.currentUser = user;
+      state.repos = repos || [];
+
+      displayUser(user);
+      if (repos) displayRepos(repos);
+
+      loadingState.style.display = "none";
+    });
+
+    // DELETE
+    div.querySelector(".remove-btn").addEventListener("click", () => {
+      removeFromFavorites(user.login);
+    });
+
+    favorisListt.appendChild(div);
+  });
+
+  favorisCount.textContent = state.bookmarks.length;
+}

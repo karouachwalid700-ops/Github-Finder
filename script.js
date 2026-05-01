@@ -138,3 +138,18 @@ function displayRepos(repos) {
   });
 }
 
+  // FAVORITES
+function addToFavorites(user) {
+  const exists = state.bookmarks.find(u => u.login === user.login);
+  if (!exists) {
+    state.bookmarks.push(user);
+    saveFavorites();
+    displayFavorites();
+  }
+}
+
+function removeFromFavorites(username) {
+  state.bookmarks = state.bookmarks.filter(u => u.login !== username);
+  saveFavorites();
+  displayFavorites();
+}

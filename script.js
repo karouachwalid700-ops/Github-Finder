@@ -234,3 +234,10 @@ async function handleSearch() {
   loadingState.style.display = "none";
   errorState.style.display = "none";
 }
+
+// EVENTS
+searchBtn.addEventListener('click', handleSearch);
+
+searchInput.addEventListener('keypress', (e) => {
+  if (e.key === "Enter") handleSearch();
+});

@@ -90,3 +90,51 @@ async function fetchUserRepos(username) {
   }
 }
 
+// DISPLAY USER
+function displayUser(user) {
+  userProfile.innerHTML = `
+    <h2 class = "titre-prof">Profile</h2>
+    
+    <div class="profile-card">
+      <img src="${user.avatar_url}" alt="avatar">
+      <h2>${user.name || "No name"}</h2>
+      <p class = "username">@${user.login}</p>
+      </br>
+      <p>${user.bio || "No bio"}</p>
+      </br>
+      <div class="stats">
+        <span>Repos ${user.public_repos}</span>
+        </br>
+        <span>Followers ${user.followers}</span>
+        </br>
+        <span>Following ${user.following}</span>
+      </div>
+      <a href="${user.html_url}" target="_blank">Visit GitHub Profile</a>
+      <button id="favBtn">Add to Favorites</button>
+    </div>
+  `;
+
+  userProfile.style.display = "block";
+
+  document.getElementById("favBtn").addEventListener("click", () => {
+    addToFavorites(user);
+  });
+}
+
+// DISPLAY REPOS
+function displayRepos(repos) {
+  reposList.innerHTML = "<h2>Repositories</h2>";
+
+  repos.forEach(repo => {
+    const card = document.createElement("div");
+    card.classList.add("repo-card");
+    card.innerHTML = `
+      <h4>${repo.name}</h4>
+      <p>${repo.description || "No description"}</p>
+      </br>
+      <div>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</div>
+    `;
+    reposList.appendChild(card);
+  });
+}
+

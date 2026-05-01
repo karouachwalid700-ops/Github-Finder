@@ -241,3 +241,23 @@ searchBtn.addEventListener('click', handleSearch);
 searchInput.addEventListener('keypress', (e) => {
   if (e.key === "Enter") handleSearch();
 });
+
+favBtnHeader.addEventListener("click", () => {
+  showFavOnly = !showFavOnly;
+
+  if (showFavOnly) {
+    favoritesSection.style.display = "block";
+    profileContainer.style.display = "none";
+    heroSection.style.display = "none";
+  } else {
+    favoritesSection.style.display = "none";
+    profileContainer.style.display = "flex";
+    heroSection.style.display = "block";
+  }
+});
+
+
+// INIT
+loadFavorites();
+displayFavorites();
+showWelcome();
